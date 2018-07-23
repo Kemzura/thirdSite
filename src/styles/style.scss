@@ -36,7 +36,6 @@
 .login {
   min-width: 380px;
   min-height: 400px;
-  position: absolute;
   background-color: rgba(221, 199, 163, 0.5);
   border-radius: 2%;
   font-family: "Sansus";
@@ -110,6 +109,7 @@
     color: #ffffff;
     font-size: 16px;
     margin-left: 10px;
+    opacity: 0.8;
   }
   input {
     width: 20px;
@@ -124,6 +124,7 @@
     font-weight: bold;
     font-size: 16px;
     color: white;
+    opacity: 0.8;
   }
 }
 
@@ -145,6 +146,7 @@
   p {
     font-family: "Regular";
     color: white;
+    opacity: 0.8;
   }
 }
 
@@ -169,4 +171,75 @@
   font-family: "Regular";
   font-size: 16px;
   color: white;
+}
+
+.login__photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  content: url(../img/photo.jpg);
+}
+
+.login {
+  h1 {
+    font-family: "Regular";
+    font-size: 28px;
+    color: white;
+    font-weight: 100;
+    margin-bottom: 15px;
+    opacity: 0.8;
+  }
+  .text {
+    p {
+      font-family: "Regular";
+      font-size: 16px;
+      opacity: 0.8;
+    }
+  }
+}
+
+.login__contacts {
+  display: flex;
+  margin-bottom: 40px;
+  :hover {
+    fill: red;
+    cursor: pointer;
+  }
+}
+
+.login__contacts__vk {
+  content: url("../img/vk.svg");
+}
+.login__contacts__gh {
+  content: url("../img/github.svg");
+
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.login__contacts__ink {
+  content: url("../img/in.svg");
+}
+
+.buttons2 {
+  height: 100%;
+  background-color: #dea339;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Regular";
+  font-size: 16px;
+  color: white;
+}
+.login__buttons__blog {
+  width: 26%;
+}
+.login__buttons__about {
+  width: 32%;
+}
+
+.login__buttons__my-works {
+  width: 40%;
 }
