@@ -1,0 +1,40 @@
+doctype html
+html
+    head
+    meta(charset = 'utf-8')
+    meta(name='viewport', content="initial-scale=1.0, width=device-width")
+    title Webpack app
+    body
+        .wrapper
+            .container
+                .login
+                    .login__header
+                        .login__header__left-icon
+                        p АВТОРИЗУЙТЕСЬ
+                        .login__header__right-icon
+                    .login__input-login
+                        .login__input-login__img
+                        input.enter(type="text" value="Логин")
+                    .login__input-password
+                        .login__input-password__img
+                        input.enter(type="text" value="Пароль")
+                    .login__checkbox
+                        input(type="checkbox")
+                        p Я человек
+                    .login__ask 
+                        p Вы точно не робот?
+                    .login__radio
+                        .login__radio__yes.radio
+                            input(name="auth" type="radio")
+                            p Да
+                        .login__radio__not_sure.radio
+                            input(name="auth" type="radio")
+                            p Не уверен
+                    .login__buttons
+                        .login__buttons__main.buttons
+                            p На главную
+                        .login__buttons__enter.buttons
+                            p Войти
+            .footer
+                .text © Владимир Астахов | создано с любовью в LoftSchool | 2016
+        
