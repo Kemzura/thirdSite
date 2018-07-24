@@ -1,9 +1,7 @@
 doctype html
 html
-    head
-    meta(charset = 'utf-8')
-    meta(name='viewport', content="initial-scale=1.0, width=device-width")
-    title Webpack app
+    include includes/head.pug
+    title Index
     body
         .wrapper
             .container
@@ -46,8 +44,9 @@ html
                         .login__contacts__gh
                         .login__contacts__ink
                     .login__buttons
-                        .login__buttons__my-works.buttons2
-                            p Мои работы
+                        .login__buttons__my-works
+                            a(class='buttons2' href='my-works.html')
+                                p Мои работы
                         .login__buttons__about.buttons2
                             p Обо мне
                         .login__buttons__blog.buttons2

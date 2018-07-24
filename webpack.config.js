@@ -4,7 +4,14 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    app: "./src/index.js",
+    myWorks: "./src/my-works.js"
+  },
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist")
+  },
   module: {
     rules: [
       {
@@ -42,22 +49,28 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/pug/index.pug"
+      title: "Login Page",
+      template: "./src/pug/index.pug",
+      excludeChunks: ["myWorks"],
+      hash: true
+    }),
+    new HtmlWebpackPlugin({
+      title: "My Works",
+      filename: "my-works.html",
+      template: "./src/pug/my-works.pug",
+      chunks: ["myWorks"],
+      hash: true
     }),
     new CleanWebpackPlugin(["dist"]),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     })
-  ],
-  optimization: {
+  ]
+};
+/*optimization: {
     splitChunks: {
       chunks: "all"
     }
-  },
-
-  output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist")
   }
-};
+};*/
