@@ -5,52 +5,55 @@ html
     body
         .wrapper
             .container
-                .login
-                    .login__header
-                        .login__header__left-icon
-                        p АВТОРИЗУЙТЕСЬ
-                        .login__header__right-icon
-                    .login__input-login
-                        .login__input-login__img
-                        input.enter(type="text" value="Логин")
-                    .login__input-password
-                        .login__input-password__img
-                        input.enter(type="text" value="Пароль")
-                    .login__checkbox
-                        input(type="checkbox")
-                        p Я человек
-                    .login__ask 
-                        p Вы точно не робот?
-                    .login__radio
-                        .login__radio__yes.radio
-                            input(name="auth" type="radio")
-                            p Да
-                        .login__radio__not_sure.radio
-                            input(name="auth" type="radio")
-                            p Не уверен
-                    .login__buttons
-                        .login__buttons__main.buttons
-                            p На главную
-                        .login__buttons__enter.buttons
-                            p Войти
-                .login
-                    .login__photo
-                    h1 Владимир Астахов
-                    .text 
-                        p Личный сайт веб разработчика
-                    .login__contacts
-                        .login__contacts__vk
-                            
-                        .login__contacts__gh
-                        .login__contacts__ink
-                    .login__buttons
-                        .login__buttons__my-works
-                            a(class='buttons2' href='my-works.html')
-                                p Мои работы
-                        .login__buttons__about.buttons2
-                            p Обо мне
-                        .login__buttons__blog.buttons2
-                            p Блог
+                .card
+                    .login
+                        .login__header
+                            .login__header__left-icon
+                            p АВТОРИЗУЙТЕСЬ
+                            .login__header__right-icon
+                        .login__input-login
+                            .login__input-login__img
+                            input.enter(type="text" value="Логин")
+                        .login__input-password
+                            .login__input-password__img
+                            input.enter(type="password" value="Пароль")
+                        .login__checkbox
+                            input(type="checkbox" id="human")
+                            label.checkbox__button(for="human") Я человек
+                        .login__ask 
+                            p Вы точно не робот?
+                        .login__radio
+                            .login__radio__yes.radio
+                                input(type="radio" name="auth" id="yes")
+                                label.radio__button(for="yes") Да
+                            .login__radio__not_sure.radio
+                                input(type="radio" name="auth" id="not_sure")
+                                label.radio__button(for="not_sure") Не уверен
+                        .login__buttons
+                            .login__buttons__main.buttons
+                                p На главную
+                            .login__buttons__enter.buttons
+                                p Войти
+
+
+                    .user
+                        .user__photo
+                        h1 Владимир Астахов
+                        .text 
+                            p Личный сайт веб разработчика
+                        .user__contacts
+                            .user__contacts__vk
+                                
+                            .user__contacts__gh
+                            .user__contacts__ink
+                        .user__buttons
+                            .user__buttons__my-works
+                                a(class='buttons2' href='my-works.html')
+                                    p Мои работы
+                            .user__buttons__about.buttons2
+                                p Обо мне
+                            .user__buttons__blog.buttons2
+                                p Блог
             .footer
                 .text © Владимир Астахов | создано с любовью в LoftSchool | 2016
         

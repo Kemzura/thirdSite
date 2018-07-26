@@ -9,6 +9,7 @@
   height: 100vh;
   background-image: url("../img/sand.jpg");
   background-size: cover;
+  user-select: none;
 }
 
 .container {
@@ -33,15 +34,30 @@
   margin-bottom: 40px;
 }
 
-.login {
-  min-width: 380px;
-  min-height: 400px;
+.card {
+  width: 400px;
+  height: 440px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.login,
+.user {
   background-color: rgba(221, 199, 163, 0.5);
   border-radius: 2%;
   font-family: "Sansus";
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  backface-visibility: hidden;
 }
 
 .login__header {
@@ -149,8 +165,55 @@
     opacity: 0.8;
   }
 }
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
 
-.login__buttons {
+label {
+  padding-left: 20px;
+  font-family: "Regular";
+  color: white;
+  opacity: 0.8;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+.radio__button::before,
+.checkbox__button::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.radio__button::before {
+  border-radius: 50%;
+}
+.checkbox__button::before {
+  border-radius: 10%;
+}
+
+input[type="radio"]:checked + label::before {
+  content: "\25cf";
+  text-align: center;
+  color: #e7a731;
+}
+
+input[type="checkbox"]:checked + label::before {
+  content: "\2714";
+  text-align: center;
+  background-color: #e7a731;
+  color: white;
+}
+
+.login__buttons,
+.user__buttons {
   width: 100%;
   height: 45px;
   display: flex;
@@ -176,7 +239,7 @@
   color: white;
 }
 
-.login__photo {
+.user__photo {
   width: 140px;
   height: 140px;
   border-radius: 50%;
@@ -185,7 +248,8 @@
   content: url(../img/photo.jpg);
 }
 
-.login {
+.user {
+  transform: rotateY(180deg);
   h1 {
     font-family: "Regular";
     font-size: 28px;
@@ -203,7 +267,7 @@
   }
 }
 
-.login__contacts {
+.user__contacts {
   display: flex;
   margin-bottom: 40px;
   :hover {
@@ -212,17 +276,17 @@
   }
 }
 
-.login__contacts__vk {
+.user__contacts__vk {
   content: url("../img/vk.svg");
 }
-.login__contacts__gh {
+.user__contacts__gh {
   content: url("../img/github.svg");
 
   margin-left: 30px;
   margin-right: 30px;
 }
 
-.login__contacts__ink {
+.user__contacts__ink {
   content: url("../img/in.svg");
 }
 
@@ -236,13 +300,20 @@
   font-size: 16px;
   color: white;
 }
-.login__buttons__blog {
+.user__buttons__blog {
   width: 26%;
 }
-.login__buttons__about {
+.user__buttons__about {
   width: 32%;
 }
 
-.login__buttons__my-works {
+.user__buttons__my-works {
   width: 40%;
 }
+
+/*.card:hover .login {
+  transform: rotateY(180deg);
+}
+.card:hover .user {
+  transform: rotateY(360deg);
+}*/
